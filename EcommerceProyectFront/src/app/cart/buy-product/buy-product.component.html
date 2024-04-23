@@ -1,0 +1,102 @@
+<div class="container mt-5">
+    <div class="card p-4">
+        <div class="row">
+            <div class="col-md-6">
+                <form #orderForm="ngForm" (ngSubmit)="placeOrder(orderForm)">
+                    <h4 class="mb-4">Detalles del Pedido</h4>
+
+                    <div class="mb-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Nombre Completo</mat-label>
+                            <input matInput 
+                            placeholder="Nombre Completo"
+                            [(ngModel)]="orderDetails.fullName"
+                            name="fullName" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="mb-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Dirección Completa</mat-label>
+                            <input matInput 
+                            placeholder="Dirección Completa"
+                            [(ngModel)]="orderDetails.fullAddress"
+                            name="fullAddress" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="mb-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Número de Contacto</mat-label>
+                            <input matInput 
+                            placeholder="Número de Contacto"
+                            [(ngModel)]="orderDetails.contactNumber"
+                            name="contactNumber" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="mb-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Número de Contacto Alternativo</mat-label>
+                            <input matInput 
+                            placeholder="Número de Contacto Alternativo"
+                            [(ngModel)]="orderDetails.alternateContactNumber"
+                            name="alternateContactNumber">
+                        </mat-form-field>
+                    </div>
+
+                    <div align="right">
+                        <button type="submit" mat-raised-button color="primary">
+                            Realizar Pedido
+                            <mat-icon aria-hidden="false" aria-label="Send">send</mat-icon>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <h4 class="mb-4">Resumen del Pedido</h4>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of productDetails">
+                            <td>{{product.productName}}</td>
+                            <td>$ {{product.productDiscountedPrice | number:'1.2-2'}}</td>
+                            <td>
+                                <select 
+                                #quantity
+                                class="form-select"
+                                [ngModel]="getQuantityForProduct(product.productId)"
+                                (change)="onQuantityChanged(quantity.value, product.productId)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            </td>
+
+                            <td>
+                                $ {{getCalculatedTotal(product.productId, product.productDiscountedPrice) | number:'1.2-2'}}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total</strong></td>
+                            <td><strong>$ {{getCalculatedGrandTotal() | number:'1.2-2'}}</strong></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

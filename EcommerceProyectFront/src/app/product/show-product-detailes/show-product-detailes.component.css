@@ -1,0 +1,28 @@
+.tabla-productos {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    margin-bottom: 20px;
+  }
+  
+  .mat-cell, .mat-header-cell {
+    text-align: center;
+  }
+  
+  .mat-cell {
+    font-size: 14px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-5 {
+    margin-top: 20px;
+  }
+  
+  .p-3 {
+    padding: 15px;
+  }
+  

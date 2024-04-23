@@ -1,0 +1,58 @@
+.mat-grid-tile {
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+}
+
+.btn-remove-image {
+    position: absolute;
+    cursor: pointer;
+    top: -8px; 
+    right: -8px; 
+    background-color: #f44336;
+    color: #fff; 
+    border-radius: 50%;
+    width: 24px; 
+    height: 24px;
+    line-height: 24px; 
+    text-align: center; 
+    font-size: 12px;
+}
+
+.dropzone {
+    height: 150px;
+    min-width: 100px;
+    display: table;
+    background-color: #f5f5f5; 
+    border: dashed 2px #ccc; 
+    border-radius: 10px;
+    margin: 0 auto; 
+    width: 300px;
+}
+
+.text-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.center {
+    text-align: center;
+}
+
+.currency {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currency input {
+    padding-left: 30px;
+}
+
+.currency:before {
+    content: "$"; /* Símbolo de moneda */
+    position: absolute;
+    left: 5px; /* Espacio a la izquierda */
+    top: 50%; /* Alineación vertical */
+    transform: translateY(-50%); /* Ajuste de posición vertical */
+    color: #000; /* Cambio del color del símbolo de moneda */
+}

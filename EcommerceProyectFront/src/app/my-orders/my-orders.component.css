@@ -1,0 +1,27 @@
+.table-container {
+    overflow-x: auto;
+  }
+  
+  .mat-table {
+    width: 100%;
+  }
+  
+  th.mat-header-cell, td.mat-cell {
+    text-align: center;
+  }
+  
+  th.mat-header-cell {
+    font-weight: bold;
+  }
+  
+  .mat-row:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .check-icon {
+    color: white;
+    background-color: green;
+    border-radius: 50%;
+    padding: 2px;
+  }
+  
