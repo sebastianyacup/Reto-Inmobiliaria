@@ -1,0 +1,22 @@
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla th, .tabla td {
+    padding: 10px;
+    text-align: center;
+}
+
+.tabla th {
+    background-color: #007bff;
+    color: white;
+}
+
+.tabla td {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tabla tr:nth-child(even) {
+    background-color: #f8f9fa;
+}

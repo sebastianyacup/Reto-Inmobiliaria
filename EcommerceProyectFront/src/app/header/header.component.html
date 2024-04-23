@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <span class="toolbar-title">Venta Inmobiliaria</span>
+  <span class="toolbar-subtitle">¡Descubre tu nuevo hogar con nosotros!</span>
+  <span class="spacer"></span>
+  <button *ngIf="!isLoggedIn()" routerLink="/login" mat-raised-button color="accent">
+    <mat-icon>person</mat-icon> Iniciar sesión
+  </button>
+  <button *ngIf="isLoggedIn()" (click)="logout()" mat-raised-button color="warn">
+    <mat-icon>exit_to_app</mat-icon> Cerrar sesión
+  </button>
+</mat-toolbar>
+
+<mat-toolbar color="primary" *ngIf="isLoggedIn()">
+  <button mat-raised-button color="accent" routerLink="/">
+    <mat-icon>home</mat-icon> Inicio
+  </button>
+  <button *ngIf="!isAdmin()" mat-raised-button color="accent" routerLink="/cart">
+    <mat-icon>shopping_cart</mat-icon> Carrito
+  </button>
+  <button *ngIf="!isAdmin()" mat-raised-button color="accent" routerLink="/myOrders">
+    <mat-icon>list_alt</mat-icon> Mis Pedidos
+  </button>
+  <button *ngIf="isAdmin()" mat-raised-button color="accent" routerLink="/addNewProduct">
+    <mat-icon>add_circle</mat-icon> Agregar Producto
+  </button>
+  <button *ngIf="isAdmin()" mat-raised-button color="accent" routerLink="/showProductDetailes">
+    <mat-icon>visibility</mat-icon> Ver Productos
+  </button>
+  <button *ngIf="isAdmin()" mat-raised-button color="accent" routerLink="/orderInformation">
+    <mat-icon>assignment</mat-icon> Pedidos
+  </button>
+</mat-toolbar>

@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card image-container">
+                <img [src]="product.productImages[selectProductIndex].url" class="img-fluid" alt="">
+            </div>
+            <div class="thumbnail-container mt-3">
+                <div class="thumbnail" *ngFor="let file of product.productImages; let i = index" (click)="changeIndex(i)" [class.selected]="selectProductIndex === i">
+                    <img [src]="file.url" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="product-information">
+                <h2>{{product.productName}}</h2>
+                <p><b>Descripción:</b> {{product.productDescription}}</p>
+                <div class="price">
+                    <p><b>$ {{product.productDiscountedPrice | currency:'COP':'symbol':'1.0-0'}}</b></p>
+                    <p><del>{{product.productActualPrice | currency:'COP':'symbol':'1.0-0'}}</del></p>
+                </div>
+                <div class="button-container">
+                    <button mat-raised-button color="primary" (click)="buyProduct(product.productId)">Comprar Ahora</button>
+                    <button mat-raised-button color="accent" (click)="addToCart(product.productId)">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

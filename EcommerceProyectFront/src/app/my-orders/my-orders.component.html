@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <table mat-table [dataSource]="myOrderDetails" class="mat-elevation-z8">
+      <!-- Nombre -->
+      <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderFullName}} </td>
+      </ng-container>
+
+      <!-- Dirección -->
+      <ng-container matColumnDef="Address">
+          <th mat-header-cell *matHeaderCellDef> Dirección </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderFullOrder}} </td>
+      </ng-container>
+
+      <!-- Contacto -->
+      <ng-container matColumnDef="ContactNo">
+          <th mat-header-cell *matHeaderCellDef> Contacto </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderContactNumber}} </td>
+      </ng-container>
+
+      <!-- Monto -->
+      <ng-container matColumnDef="Amount">
+          <th mat-header-cell *matHeaderCellDef> Monto </th>
+          <td mat-cell *matCellDef="let element"> COP. {{element.orderAmount | number}} </td>
+      </ng-container>
+
+      <!-- Estado -->
+      <ng-container matColumnDef="Status">
+          <th mat-header-cell *matHeaderCellDef> Estado </th>
+          <td mat-cell *matCellDef="let element">
+              <span *ngIf="element.orderStatus === 'Placed'">
+                  <i class="material-icons check-icon">check_circle</i>
+              </span>
+              <span *ngIf="element.orderStatus !== 'Placed'">{{element.orderStatus}}</span>
+          </td>
+      </ng-container>
+
+      <!-- Fila de encabezado -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <!-- Fila de datos -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

@@ -1,0 +1,27 @@
+.container {
+    padding: 20px;
+  }
+  
+  .mat-elevation-z8 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .mat-table th, .mat-table td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .mat-header-row, .mat-row {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  button {
+    margin-right: 10px;
+  }
+  
