@@ -1,32 +1,31 @@
 <div class="container mt-5">
-   <mat-form-field appearance="outline" class="w-75 mx-auto mb-4">
-     <input #searchkeyword
-       (keyup)="searchByKeyword(searchkeyword.value)"
-       matInput name="searchKey" id="searchKey" placeholder="Buscar cualquier producto">
-   </mat-form-field>
- 
-   <mat-grid-list cols="4" rowHeight="3:5" gutterSize="20">
-     <mat-grid-tile *ngFor="let p of productDetails">
-       <div class="product-card">
-         <img [src]="p.productImages[0].url" alt="Producto" class="product-image">
-         <div class="product-details">
-           <p class="product-name">{{ p.productName }}</p>
-           <p class="product-description">{{ p.productDescription }}</p>
-           <div class="price-section">
-             <span class="price-label">COP. $</span>
-             <span class="price-value">{{ formatPrice(p.productDiscountedPrice) }}</span>
-             <span class="actual-price">COP. $ <del>{{ formatPrice(p.productActualPrice) }}</del></span>
-           </div>
-           <button type="button" mat-raised-button color="primary" class="view-details-button" (click)="showProductDetails(p.productId)">
-             Ver detalles
-           </button>
-         </div>
-       </div>
-     </mat-grid-tile>
-   </mat-grid-list>
- 
-   <div class="text-center mt-5" *ngIf="showLoadButton">
-     <button type="button" mat-raised-button color="primary" (click)="loadMoreProduct()">Cargar más</button>
-   </div>
- </div>
- 
+  <mat-form-field appearance="outline" class="w-75 mx-auto mb-4">
+    <input #searchkeyword
+      (keyup)="searchByKeyword(searchkeyword.value)"
+      matInput name="searchKey" id="searchKey" placeholder="Buscar cualquier producto">
+  </mat-form-field>
+
+  <mat-grid-list cols="4" rowHeight="3:5" gutterSize="20">
+    <mat-grid-tile *ngFor="let p of productDetails">
+      <div class="product-card">
+        <img [src]="p.productImages[0].url" alt="Producto" class="product-image">
+        <div class="product-details">
+          <p class="product-name">{{ p.productName }}</p>
+          <p class="product-description">{{ p.productDescription }}</p>
+          <div class="price-section">
+            <span class="price-label">COP. $</span>
+            <span class="price-value">{{ formatPrice(p.productDiscountedPrice) }}</span>
+            <span class="actual-price">COP. $ <del>{{ formatPrice(p.productActualPrice) }}</del></span>
+          </div>
+          <button type="button" mat-raised-button color="primary" class="view-details-button" (click)="showProductDetails(p.productId)">
+            Ver detalles
+          </button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <div class="text-center mt-5" *ngIf="showLoadButton">
+    <button type="button" mat-raised-button color="primary" (click)="loadMoreProduct()">Cargar más</button>
+  </div>
+</div>

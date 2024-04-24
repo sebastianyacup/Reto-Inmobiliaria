@@ -1,59 +1,42 @@
-# Nombre de la canalización
-name: CI/CD Pipeline
+name: CI/CD Pipeline  # Nombre de la canalización
 
-# Configuración de los eventos que activan la ejecución de la canalización
-on:
+on:  # Define cuándo se activará la ejecución de la canalización
   push:  # Se activa cuando se realiza un push
     branches:  # Se especifica la rama que activa la canalización
-      - main  # Se especifica la rama 'main'
+      - main  # Se activa cuando se realizan cambios en la rama 'main'
 
-# Definición de los trabajos que se ejecutarán en la canalización
-jobs:
+jobs:  # Define los trabajos que se ejecutarán en la canalización
   build-and-deploy:  # Trabajo para construir y desplegar
     runs-on: ubuntu-latest  # Entorno en el que se ejecutará el trabajo (en este caso, Ubuntu)
 
-    steps:  # Definición de los pasos del trabajo
-      - name: Check current directory  # Paso para verificar el directorio actual
-        run: ls  # Lista los archivos y directorios en el directorio actual
-     
+    steps:  # Define los pasos del trabajo
       - name: Checkout code  # Paso para obtener el código del repositorio
         uses: actions/checkout@v2  # Se utiliza la acción 'checkout' para obtener el código del repositorio
-        with:
-          path: EcommerceProyectFront  # Especifica la carpeta donde se clonará el repositorio
 
       - name: Set up Node.js  # Paso para configurar Node.js
-        uses: actions/setup-node@v2  # Se utiliza la acción 'setup-node' para configurar Node.js
+        uses: actions/setup-node@v2  # Utiliza la acción 'setup-node' para configurar Node.js
         with:
-          node-version: '14'  # Se especifica la versión de Node.js a utilizar
+          node-version: '14'  # Especifica la versión de Node.js a utilizar
 
       - name: Install dependencies  # Paso para instalar las dependencias del proyecto
         run: npm install  # Se ejecuta el comando 'npm install' para instalar las dependencias
-        working-directory: EcommerceProyectFront  # Cambia al directorio del proyecto
 
-      - name: Increment version  # Paso para incrementar la versión del proyecto
+      - name: Run tests  # Paso para ejecutar las pruebas del proyecto
+        run: npm test  # Se ejecuta el comando 'npm test' para ejecutar las pruebas
+
+      # Este paso incrementa automáticamente la versión en el archivo package.json
+      - name: Increment version  # Paso para incrementar automáticamente la versión
         run: npm version patch --force  # Incrementa el número de versión de forma automática
         working-directory: EcommerceProyectFront  # Cambia al directorio del proyecto
 
       - name: Generate changelog  # Paso para generar el registro de cambios
-        run: git log --pretty=format:"- %s" > CHANGELOG.md  # Genera el registro de cambios basado en los mensajes de commit
-        working-directory: EcommerceProyectFront  # Cambia al directorio del proyecto
-
-      - name: Commit version and changelog  # Paso para realizar el commit de la versión y el registro de cambios
         run: |
-          git config --local user.email "$(git config user.email)"  # Utiliza el correo electrónico local del usuario de Git
-          git config --local user.name "$(git config user.name)"  # Utiliza el nombre local del usuario de Git
-          git add package.json CHANGELOG.md  # Añade los archivos modificados al área de preparación
-          git commit -m "Bump version and update changelog"  # Realiza el commit con un mensaje
-          git push origin main  # Realiza el push de los cambios al repositorio remoto
-        working-directory: EcommerceProyectFront  # Cambia al directorio del proyecto
+          git log --pretty=format:"- %s" > CHANGELOG.md  # Genera el registro de cambios basado en los mensajes de commit
 
-      - name: Commit version and changelog  # Paso para realizar el commit de la versión y el registro de cambios
+      - name: Commit version and changelog  # Paso para realizar commit de la versión y el registro de cambios
         run: |
-          git config --local user.email "$(git config user.email)"  # Utiliza el correo electrónico local del usuario de Git
-          git config --local user.name "$(git config user.name)"  # Utiliza el nombre local del usuario de Git
-          git add .  # Agrega todos los archivos al área de preparación
-          git commit -m "Bump version and update changelog"  # Realiza el commit con un mensaje
-          git push origin main  # Realiza el push de los cambios al repositorio remoto
-        working-directory: EcommerceProyectFront  # Cambia al directorio del proyecto
-
-
+          git config --local user.email "action@github.com"  # Configura el email para el commit
+          git config --local user.name "GitHub Action"  # Configura el nombre de usuario para el commit
+          git add package.json CHANGELOG.md  # Añade los archivos modificados al área de staging
+          git commit -m "Bump version and update changelog"  # Realiza el commit con un mensaje indicativo
+          git push origin main  # Hace push de los cambios al repositorio remoto en la rama 'main'
