@@ -1,15 +1,15 @@
 name: CI/CD Pipeline  # Nombre de la canalización
 
-on:  # Configuración de los eventos que activan la ejecución de la canalización
+on:  # Define cuándo se activará la ejecución de la canalización
   push:  # Se activa cuando se realiza un push
     branches:  # Se especifica la rama que activa la canalización
-      - main  # Se especifica la rama 'main'
+      - main  # Se activa cuando se realizan cambios en la rama 'main'
 
-jobs:  # Definición de los trabajos que se ejecutarán en la canalización
+jobs:  # Define los trabajos que se ejecutarán en la canalización
   build-and-deploy:  # Trabajo para construir y desplegar
     runs-on: ubuntu-latest  # Entorno en el que se ejecutará el trabajo (en este caso, Ubuntu)
 
-    steps:  # Definición de los pasos del trabajo
+    steps:  # Define los pasos del trabajo
       - name: Checkout code  # Paso para obtener el código del repositorio
         uses: actions/checkout@v2  # Se utiliza la acción 'checkout' para obtener el código del repositorio
 
@@ -24,16 +24,19 @@ jobs:  # Definición de los trabajos que se ejecutarán en la canalización
       - name: Run tests  # Paso para ejecutar las pruebas del proyecto
         run: npm test  # Se ejecuta el comando 'npm test' para ejecutar las pruebas
 
-      - name: Bump version and generate changelog  # Paso para aumentar la versión y generar el registro de cambios
-        id: versioning  # ID del paso
-        uses: brightcommerce/semantic-versioning@v1  # Se utiliza una acción externa para la gestión de versiones
-        with:
-          push: true  # Se especifica que se debe realizar un push a la rama
-          github-token: ${{ secrets.ACCESS_TOKEN }}  # Token de GitHub para autenticación
+      # Este paso incrementa automáticamente la versión en el archivo package.json
+      - name: Increment version  # Paso para incrementar automáticamente la versión
+        run: npm version patch --force  # Incrementa el número de versión de forma automática
 
-      - name: Build and deploy  # Paso para construir y desplegar
+      # Este paso crea un registro de cambios basado en los mensajes de confirmación
+      - name: Generate changelog  # Paso para generar el registro de cambios
         run: |
-          # Build and deploy to staging environment
-          docker-compose up -d --build  # Se construye y despliega en el entorno de puesta en escena
-          
+          git log --pretty=format:"- %s" > CHANGELOG.md  # Genera el registro de cambios basado en los mensajes de commit
 
+      - name: Commit version and changelog  # Paso para realizar commit de la versión y el registro de cambios
+        run: |
+          git config --local user.email "action@github.com"  # Configura el email para el commit
+          git config --local user.name "GitHub Action"  # Configura el nombre de usuario para el commit
+          git add package.json CHANGELOG.md  # Añade los archivos modificados al área de staging
+          git commit -m "Bump version and update changelog"  # Realiza el commit con un mensaje indicativo
+          git push origin main  # Hace push de los cambios al repositorio remoto en la rama 'main'
