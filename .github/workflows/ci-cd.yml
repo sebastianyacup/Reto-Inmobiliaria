@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest  # Entorno en el que se ejecutará el trabajo (en este caso, Ubuntu)
 
     steps:  # Definición de los pasos del trabajo
+      - name: Check current directory  # Paso para verificar el directorio actual
+        run: ls  # Lista los archivos y directorios en el directorio actual
+     
       - name: Checkout code  # Paso para obtener el código del repositorio
         uses: actions/checkout@v2  # Se utiliza la acción 'checkout' para obtener el código del repositorio
         with:
