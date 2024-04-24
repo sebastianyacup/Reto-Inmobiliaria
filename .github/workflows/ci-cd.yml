@@ -44,7 +44,13 @@ jobs:
           git push origin main  # Realiza el push de los cambios al repositorio remoto
         working-directory: EcommerceProyectFront  # Cambia al directorio del proyecto
 
+      - name: Commit version and changelog  # Paso para realizar el commit de la versión y el registro de cambios
+        run: |
+          git config --local user.email "$(git config user.email)"  # Utiliza el correo electrónico local del usuario de Git
+          git config --local user.name "$(git config user.name)"  # Utiliza el nombre local del usuario de Git
           git add .  # Agrega todos los archivos al área de preparación
-          git commit -m "Bump version and update changelog"  # Realiza un commit con el mensaje especificado
-          git push origin main  # Empuja los cambios al repositorio remoto en la rama main
+          git commit -m "Bump version and update changelog"  # Realiza el commit con un mensaje
+          git push origin main  # Realiza el push de los cambios al repositorio remoto
+        working-directory: EcommerceProyectFront  # Cambia al directorio del proyecto
+
 
