@@ -64,7 +64,7 @@ El Usuario **administrador** por defecto utiliza las siguientes credenciales:
 
 Para conectarse a la base de datos por defecto, la contraseña es **123456**. 🗄️
 
-
+## 
 
 ### 💡 **NOTA**
 
