@@ -1,42 +1,39 @@
-name: CI/CD Pipeline  # Nombre de la canalización
+name: CI/CD Pipeline Front  # Nombre de la canalización
 
-on:  # Define cuándo se activará la ejecución de la canalización
+on:  # Evento que activa la ejecución de la canalización
   push:  # Se activa cuando se realiza un push
-    branches:  # Se especifica la rama que activa la canalización
-      - main  # Se activa cuando se realizan cambios en la rama 'main'
+    branches:  # Especifica la rama que activa la canalización
+      - main  # Se activa cuando se realiza un push en la rama 'main'
 
-jobs:  # Define los trabajos que se ejecutarán en la canalización
-  build-and-deploy:  # Trabajo para construir y desplegar
+jobs:  # Definición de los trabajos que se ejecutarán en la canalización
+  build-and-deploy:  # Nombre del trabajo para construir y desplegar
     runs-on: ubuntu-latest  # Entorno en el que se ejecutará el trabajo (en este caso, Ubuntu)
 
-    steps:  # Define los pasos del trabajo
+    steps:  # Definición de los pasos del trabajo
       - name: Checkout code  # Paso para obtener el código del repositorio
-        uses: actions/checkout@v2  # Se utiliza la acción 'checkout' para obtener el código del repositorio
+        uses: actions/checkout@v2  # Utiliza la acción 'checkout' para obtener el código del repositorio
 
       - name: Set up Node.js  # Paso para configurar Node.js
-        uses: actions/setup-node@v2  # Se utiliza la acción 'setup-node' para configurar Node.js
+        uses: actions/setup-node@v2  # Utiliza la acción 'setup-node' para configurar Node.js
         with:
-          node-version: '14'  # Se especifica la versión de Node.js a utilizar
+          node-version: '14'  # Especifica la versión de Node.js a utilizar
 
       - name: Install dependencies  # Paso para instalar las dependencias del proyecto
-        run: npm install  # Se ejecuta el comando 'npm install' para instalar las dependencias
+        run: npm install  # Ejecuta el comando 'npm install' para instalar las dependencias
 
       - name: Run tests  # Paso para ejecutar las pruebas del proyecto
-        run: npm test  # Se ejecuta el comando 'npm test' para ejecutar las pruebas
+        run: npm test  # Ejecuta el script de pruebas definido en el archivo package.json
 
-      # Este paso incrementa automáticamente la versión en el archivo package.json
-      - name: Increment version  # Paso para incrementar automáticamente la versión
+      - name: Build  # Paso para construir la aplicación
+        run: npm run build  # Ejecuta el script de construcción definido en el archivo package.json
+
+      - name: Increment version  # Paso para incrementar automáticamente la versión del proyecto
         run: npm version patch --force  # Incrementa el número de versión de forma automática
 
-      # Este paso crea un registro de cambios basado en los mensajes de confirmación
       - name: Generate changelog  # Paso para generar el registro de cambios
-        run: |
-          git log --pretty=format:"- %s" > CHANGELOG.md  # Genera el registro de cambios basado en los mensajes de commit
+        run: git log --pretty=format:"- %s" > CHANGELOG.md  # Genera el registro de cambios basado en los mensajes de commit
 
-      - name: Commit version and changelog  # Paso para realizar commit de la versión y el registro de cambios
+      - name: Deploy to staging  # Paso para desplegar la aplicación en un entorno de puesta en escena
         run: |
-          git config --local user.email "action@github.com"  # Configura el email para el commit
-          git config --local user.name "GitHub Action"  # Configura el nombre de usuario para el commit
-          git add package.json CHANGELOG.md  # Añade los archivos modificados al área de staging
-          git commit -m "Bump version and update changelog"  # Realiza el commit con un mensaje indicativo
-          git push origin main  # Hace push de los cambios al repositorio remoto en la rama 'main'
+          docker-compose up -d --build  # Construye y levanta los contenedores de la aplicación en el entorno de puesta en escena
+      
