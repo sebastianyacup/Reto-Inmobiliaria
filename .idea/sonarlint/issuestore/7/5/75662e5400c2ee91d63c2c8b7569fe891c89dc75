@@ -1,0 +1,14 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áîé×J$b5e11083-e0da-4557-97f0-06746a5bac5d
+S
+java:S1068"1Remove this unused "orderFullName" private field.(½÷òéûÿÿÿÿ8ê•å ğ1
+T
+java:S1068"2Remove this unused "orderFullOrder" private field.(Èëğïûÿÿÿÿ8ê•å ğ1
+S
+java:S1068"6Remove this unused "orderContactNumber" private field.(”ĞÓ­8ê•å ğ1
+a
+java:S1068"?Remove this unused "orderAlternateContactNumber" private field.(ïşß¼üÿÿÿÿ8ê•å ğ1
+L
+java:S1068"/Remove this unused "orderStatus" private field.(œ¦…À8ê•å ğ1
+Q
+java:S1068"/Remove this unused "orderAmount" private field.(™Ïÿÿÿÿÿ8ê•å ğ1

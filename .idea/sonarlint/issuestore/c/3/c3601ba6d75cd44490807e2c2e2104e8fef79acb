@@ -1,0 +1,18 @@
+
+
+java:S4973/"<Strings and Boxed types should be compared using "equals()".(šðÊ8©•÷¢ð1J$fcbb224d-ffad-42f4-826f-f114c5bcf8ec
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÀùþòùÿÿÿÿJ$9a686d95-9843-4a10-be05-54f344d551e8
+z
+java:S3655@"7Call "Optional#isPresent()" before accessing the value.(…ž³Å8¾•÷¢ð1J$e87c99df-751b-423b-ab53-e75ddbdd87d8
+y
+java:S3655#"7Call "Optional#isPresent()" before accessing the value.(Ò™à#8¼•÷¢ð1J$576c45d9-c5a3-445c-b0d0-806967349194
+z
+java:S3655*"7Call "Optional#isPresent()" before accessing the value.(°æ•û8º•÷¢ð1J$453d60f3-69f0-43b8-b7fa-e8bbf1f96c8f
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Â“²¡ð1J$048738b4-6f2d-41d4-85f9-3feb491fc411
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Â“²¡ð1J$b1d96bde-3bfc-4069-ab33-985eeb8c2666
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Â“²¡ð1J$48b6699f-31e5-4831-88b6-d1f733232bcb
+†
+java:S11552">Use isEmpty() to check whether the collection is empty or not.(É¬‹üýÿÿÿÿ8Ï•÷¢ð1J$9aa869b0-a9a9-4a0e-90da-b9485e9efe00

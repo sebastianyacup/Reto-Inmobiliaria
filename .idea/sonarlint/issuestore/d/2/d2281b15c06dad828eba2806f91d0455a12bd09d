@@ -1,0 +1,22 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(â°æ€8ıÚ¨¤ğ1J$6bd876e5-5e82-4384-bfb6-40b26b3d29f7
+y
+java:S3655F"7Call "Optional#isPresent()" before accessing the value.(Ò™à#8‰Û¨¤ğ1J$dae76488-7918-42ab-881f-fc554d1f3208
+
+java:S3655?"7Call "Optional#isPresent()" before accessing the value.(„èœ†ıÿÿÿÿ8‰Û¨¤ğ1J$c8096c86-9016-4569-b70d-64accc41d920
+z
+java:S3655L"7Call "Optional#isPresent()" before accessing the value.(…³Å8‰Û¨¤ğ1J$419bd7f8-a902-4269-b38b-1c33e48dc52e
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ŠÛ¨¤ğ1J$72fd2028-e6b9-4797-b948-0fb641d8cb83
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ŠÛ¨¤ğ1J$cf3a54d8-7226-4870-9833-c241f0823f95
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ŠÛ¨¤ğ1J$08ce85aa-722e-499d-aaf4-1258ae8bbcf1
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ŠÛ¨¤ğ1J$3a96bc0e-3b87-4117-9433-bbee5c56b98a
+j
+java:S1905*"'Remove this unnecessary cast to "List".(åú®8Û¨¤ğ1J$8bfc5793-699b-4472-8daa-13468a9d8e2f
+j
+java:S1905,"'Remove this unnecessary cast to "List".(Îó°°8Û¨¤ğ1J$8f4c356d-2ef8-4a2c-aca5-17bc70c8fc0d
+€
+java:S1612O"=Replace this lambda with method reference 'Cart::getProduct'.(¼¨ÓÇ8•Û¨¤ğ1J$586d3afd-947d-4cb1-a4c2-7e259df5a1db
