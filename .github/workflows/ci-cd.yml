@@ -1,0 +1,39 @@
+name: CI/CD Pipeline  # Nombre de la canalización
+
+on:  # Configuración de los eventos que activan la ejecución de la canalización
+  push:  # Se activa cuando se realiza un push
+    branches:  # Se especifica la rama que activa la canalización
+      - main  # Se especifica la rama 'main'
+
+jobs:  # Definición de los trabajos que se ejecutarán en la canalización
+  build-and-deploy:  # Trabajo para construir y desplegar
+    runs-on: ubuntu-latest  # Entorno en el que se ejecutará el trabajo (en este caso, Ubuntu)
+
+    steps:  # Definición de los pasos del trabajo
+      - name: Checkout code  # Paso para obtener el código del repositorio
+        uses: actions/checkout@v2  # Se utiliza la acción 'checkout' para obtener el código del repositorio
+
+      - name: Set up Node.js  # Paso para configurar Node.js
+        uses: actions/setup-node@v2  # Se utiliza la acción 'setup-node' para configurar Node.js
+        with:
+          node-version: '14'  # Se especifica la versión de Node.js a utilizar
+
+      - name: Install dependencies  # Paso para instalar las dependencias del proyecto
+        run: npm install  # Se ejecuta el comando 'npm install' para instalar las dependencias
+
+      - name: Run tests  # Paso para ejecutar las pruebas del proyecto
+        run: npm test  # Se ejecuta el comando 'npm test' para ejecutar las pruebas
+
+      - name: Bump version and generate changelog  # Paso para aumentar la versión y generar el registro de cambios
+        id: versioning  # ID del paso
+        uses: brightcommerce/semantic-versioning@v1  # Se utiliza una acción externa para la gestión de versiones
+        with:
+          push: true  # Se especifica que se debe realizar un push a la rama
+          github-token: ${{ secrets.ACCESS_TOKEN }}  # Token de GitHub para autenticación
+
+      - name: Build and deploy  # Paso para construir y desplegar
+        run: |
+          # Build and deploy to staging environment
+          docker-compose up -d --build  # Se construye y despliega en el entorno de puesta en escena
+          
+
