@@ -10,8 +10,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 300px; /* Ajustar el ancho máximo del contenedor de productos */
-  margin: 0 auto; /* Centrar el contenedor */
+  max-width: 300px; 
+  max-height: 400px; 
+  margin: 0 auto;
 }
 
 .product-image {
@@ -58,7 +59,8 @@
 }
 
 .view-details-button {
-  margin-top: auto; 
-  max-width: 100%; 
-  width: auto; 
+  margin-top: 20px; 
+  max-width: 200px; 
+  width: 100%; 
+  margin: 0 auto; 
 }

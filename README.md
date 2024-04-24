@@ -50,14 +50,26 @@ Para configurar y ejecutar el proyecto, sigue estos sencillos pasos:
     ```bash
     docker-compose up
     ```
+    ##  ##
+
 
 Espera a que se ejecute correctamente. Una vez completado, puedes acceder a la plataforma a través de tu navegador web utilizando la dirección proporcionada por Docker.
 
 ¡Disfruta explorando Casa Tu Express! 🎉
 
+# Datos Importantes 🚀
+
+El Usuario **administrador** por defecto utiliza las siguientes credenciales:
+
+👤 **Username**: admin@gmail.com  
+🔑 **Contraseña**: 123
+
+Para conectarse a la base de datos por defecto, la contraseña es **123456**. 🗄️
+
+
 ### 💡 **NOTA**
 
 En este proyecto, se incluye un vídeo titulado **'Tutorial del reto'**, el cual muestra en detalle el funcionamiento completo, así como también proporciona una guía paso a paso para su utilización. 
 
-Para ver el vídeo, puedes hacer clic [aquí]() o simplemente sigue este enlace:
-[Ver vídeo]()
+Para ver el vídeo, puedes hacer clic [aquí](https://drive.google.com/file/d/1pK5LWmFcSVUQmpQFQ708OAxRz25xrUbN/view) o simplemente sigue este enlace:
+[Ver vídeo](https://drive.google.com/file/d/1pK5LWmFcSVUQmpQFQ708OAxRz25xrUbN/view)
