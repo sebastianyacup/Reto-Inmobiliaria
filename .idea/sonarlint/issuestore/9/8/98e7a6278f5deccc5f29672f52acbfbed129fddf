@@ -1,0 +1,6 @@
+
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(þãâðÿÿÿÿÿJ$7fca4e80-8229-4a8b-9449-5563b8d4352a
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8åó‘žð1J$3e533074-6914-4ff5-8bd5-44149dfa3f72
+œ
+java:S1128"TRemove this unused import 'com.codeWithProject.ecommerce.repository.UserRepository'.(þÚõéùÿÿÿÿ8¿î¬£ð1J$63db1845-c7d4-40e5-854c-4de37d74c043

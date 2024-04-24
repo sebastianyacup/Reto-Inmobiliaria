@@ -1,0 +1,12 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ş¦ú—8é¾À¨ï1J$5bc36e4f-d566-4283-a8be-761da0506c57
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ƒñŠŸğ1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ƒñŠŸğ1
+_
+java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞ8ƒñŠŸğ1
+_
+java:S1874"BRemove this use of "EnableGlobalMethodSecurity"; it is deprecated.(ö­ê×8…ñŠŸğ1
+[
+java:S1874-"9Remove this use of "authorizeRequests"; it is deprecated.(ĞğÛÅùÿÿÿÿ8ˆñŠŸğ1

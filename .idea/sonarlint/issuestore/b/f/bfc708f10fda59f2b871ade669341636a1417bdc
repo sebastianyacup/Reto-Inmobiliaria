@@ -1,0 +1,12 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áîé×8ƒÎ¡ğ1J$a7135113-94d5-4c61-829f-e6a662dabfc0
+z
+java:S1135-"2Complete the task associated to this TODO comment.(ƒŠ® úÿÿÿÿ8ÔÅå¢ğ1J$6903d851-441f-4473-9f7d-9da0b1572d51
+‹
+java:S1128"HRemove this unused import 'com.fasterxml.jackson.annotation.JsonIgnore'.(ş‘‹„8æéä¢ğ1J$1f2801f0-6a11-4875-8b71-e72fb595f0c0
+p
+java:S1128"(Remove this unused import 'lombok.Data'.(÷í«ÿÿÿÿÿ8ÙÅå¢ğ1J$aa765ae5-ebae-4b2e-9faa-21def6d32a32
+‡
+java:S1128"?Remove this unused import 'org.hibernate.annotations.OnDelete'.(¸´€áùÿÿÿÿ8æéä¢ğ1J$ddfac317-80cc-4255-9c19-816a4334ec38
+
+java:S1128"ERemove this unused import 'org.hibernate.annotations.OnDeleteAction'.(ÅöŒ”üÿÿÿÿ8æéä¢ğ1J$1de9fa2f-fbb6-4c5e-b8a8-cb994892e3b2

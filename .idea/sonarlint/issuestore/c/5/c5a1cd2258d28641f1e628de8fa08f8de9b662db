@@ -1,0 +1,17 @@
+
+	java:S112I"FDefine and throw a dedicated exception instead of using a generic one.(êÆÖËùÿÿÿÿ8…ÌÎŸğ1J$676512c0-f114-457c-b358-bb21ee36af46
+ˆ	java:S112K"FDefine and throw a dedicated exception instead of using a generic one.(ÈçïÕ8…ÌÎŸğ1J$83096899-570b-46fd-b675-32b25df5c0a8
+ˆ	java:S112E"FDefine and throw a dedicated exception instead of using a generic one.(¦›²8…ÌÎŸğ1J$353e8636-7f1f-4cca-92e5-c97995118387
+w
+java:S3740="/Provide the parametrized type for this generic.(²–±àÿÿÿÿÿ8†ÌÎŸğ1J$1eb88755-8fee-4e41-88c0-511ae7baa4af
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¼™±–ûÿÿÿÿ8‡ÌÎŸğ1J$7f0324e1-c6ff-4f29-9eb7-5d2a733376df
+z
+java:S36550"7Call "Optional#isPresent()" before accessing the value.(…³Å8Îù£ğ1J$a2db8747-a643-4570-9ba7-bec5ad4d0db3
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÌÎŸğ1J$f211b24c-d1f4-44c8-991e-10800efaf126
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÌÎŸğ1J$6f4d33ba-be7b-4e10-ae41-2cad85e89d68
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÌÎŸğ1J$47cb3d72-0701-4bc3-8ebf-5df62dc0c8e7
+o
+java:S1602?",Remove useless curly braces around statement(ÿÍ8—ÌÎŸğ1J$3f84200f-7390-457d-a2d2-126114cc16b3

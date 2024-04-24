@@ -1,0 +1,18 @@
+
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±ËŠ’úÿÿÿÿJ$ff83d004-d617-4609-a25e-1ef363f2a7fe
+z
+java:S3655+"7Call "Optional#isPresent()" before accessing the value.(‚ƒµÄ8Ž×œ£ð1J$faf90383-70b9-4858-bc8f-e23fd872f90b
+y
+java:S36554"7Call "Optional#isPresent()" before accessing the value.(ì¿Z8×œ£ð1J$7844381f-9e0a-4bf7-ab48-f884d15f478d
+z
+java:S36557"7Call "Optional#isPresent()" before accessing the value.(‚ƒµÄ8Œ×œ£ð1J$7472e092-8b9f-46a8-aa52-9e29fdb4e4f6
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8§¬à ð1J$f7662e6b-dddd-4bab-8cc1-e9a1a3bf9e3d
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8§¬à ð1J$2b39c608-3081-47eb-a669-e457b0f38beb
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8§¬à ð1J$98c020f7-b5cd-4037-835a-39b2543ff22d
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8§¬à ð1J$57bb1162-9fa5-4eb1-a9b0-6b231995f63b
+†
+java:S1612$">Replace this lambda with method reference 'orderDetails::add'.(Ð¡¯¸þÿÿÿÿ8¢×œ£ð1J$600eb11e-93fb-4e9e-9fee-f6f662c552a0
